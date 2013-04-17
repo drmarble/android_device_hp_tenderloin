@@ -106,15 +106,15 @@ enum {
 };
 
 #define CAMERA_MIN_CONTRAST 0
-#define CAMERA_MAX_CONTRAST 255
+#define CAMERA_MAX_CONTRAST 10
 #define CAMERA_MIN_SHARPNESS 0
-#define CAMERA_MAX_SHARPNESS 255
+#define CAMERA_MAX_SHARPNESS 30
 #define CAMERA_MIN_SATURATION 0
-#define CAMERA_MAX_SATURATION 255
+#define CAMERA_MAX_SATURATION 10
 
-#define CAMERA_DEF_SHARPNESS 30
-#define CAMERA_DEF_CONTRAST 8
-#define CAMERA_DEF_SATURATION 6
+#define CAMERA_DEF_SHARPNESS 10
+#define CAMERA_DEF_CONTRAST 5
+#define CAMERA_DEF_SATURATION 5
 
 #define JPEG_EVENT_DONE 0 /* useless */
 
@@ -258,6 +258,8 @@ private:
     QualcommCameraHardware();
     virtual ~QualcommCameraHardware();
     status_t startPreviewInternal();
+    status_t setHistogramOn();
+    status_t setHistogramOff();
     status_t runFaceDetection();
     status_t setFaceDetection(const char *str);
     void stopPreviewInternal();
@@ -466,6 +468,7 @@ private:
     status_t setContrast(const CameraParameters& params);
     status_t setSaturation(const CameraParameters& params);
     status_t setSceneMode(const CameraParameters& params);
+    status_t setContinuousAf(const CameraParameters& params);
     status_t setTouchAfAec(const CameraParameters& params);
     status_t setSceneDetect(const CameraParameters& params);
     status_t setStrTextures(const CameraParameters& params);
