@@ -23,6 +23,10 @@ kernel/hp/tenderloin
 device/hp/tenderloin
 These all should have a cm-10.2-WIP branch with the latest commits. 
 
+You will also need James C. Sullins' wifi tree. Clone https://github.com/jcsullins/backports-3.10-2 into external/backports. Go to the external directory, mkdir backports, cd backports, 
+git clone https://github.com/jcsullins/backports-3.10-2.git 
+Otherwise, you will get an rude compiler error message. You are free to do it differently, put the directory wherever you want, copy a zip, put it in your roomservice.xml, just get those files. Really, I should just build the files and include them in prebuilts like jcsullins did it. It will same some build time too. Added to my to do list.
+
 Ignore my changes to atheros/wlan. That wasn't a good solution.
 
 Here's the local_manifest.xml (local_manifests/roomservice.xml) file I use: (actually, this is out of date, I'm just feeling to lazy to type up a new one)
